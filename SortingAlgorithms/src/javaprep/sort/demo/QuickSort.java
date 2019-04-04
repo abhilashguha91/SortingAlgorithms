@@ -41,24 +41,25 @@ public class QuickSort {
 		for(int i=start;i<end;i++) {
 			if(array[i]<=pivotValue) {
 				// swap i and pivot index
-				int temp = array[i];
-				array[i] = array[pivotIndex];
-				array[pivotIndex] = temp;
+				swap(array,i,pivotIndex);
 				pivotIndex++;
 				// increment Pivot index with every match found for lessor than pivot
 				
 			}
 		}
 		// Swap pivotIndex and end index
-		int temp = array[pivotIndex];
-		array[pivotIndex] = array[end];
-		array[end] = temp;
-		
+		swap(array,pivotIndex,end);
 		
 		return pivotIndex;
 		
 	}
 	
+	
+	void swap(Integer[] array, int index1, int index2) {
+		int temp = array[index1];
+		array[index1] = array[index2];
+		array[index2] = temp;
+	}
 	
 
 }
